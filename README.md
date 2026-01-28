@@ -13,13 +13,4 @@ Github Actions实现百度贴吧自动签到。
 
 4.开启actions
 
-默认actions是处于禁止的状态，需要手动开启。
-
-5.第一次运行actions
-
-将`run.txt`中的`flag`由`0`改为`1`，push到自己的仓库。
-
-```patch
-- flag: 0
-+ flag: 1
-```
+默认actions是处于禁止的状态，需要手动开启。进入Actions页面选择对应Workflow，点击右上角的Run Workflow即可。由于Github有限制，需每90天点击一次。
