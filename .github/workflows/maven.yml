@@ -7,9 +7,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v6
     - name: Set up JDK 17
@@ -22,3 +20,11 @@ jobs:
       env:
         BDUSS: ${{ secrets.BDUSS }}
       run: mvn compile exec:java -Dexec.mainClass="org.lucien.Main" -Dexec.args="${BDUSS}"
+      
+  workflow-keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
